@@ -15,9 +15,9 @@ messages = [
 ]
 
 parser = StrOutputParser()
-response = model.invoke(messages)
+chain = model | parser
 
 if __name__ == "__main__":
-    print(parser.invoke(response))
+    print(chain.invoke(messages))
 
 
